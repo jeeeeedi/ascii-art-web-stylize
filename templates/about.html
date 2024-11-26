@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- responsive: viewport meta tag to scale content for diff screen sizes -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/templates/asciiartstyle.css">
+    <meta charset="UTF-8">
+    <title>ASCII Art Generator About</title>
+</head>
+<body>
+<header id="headerID">
+    <nav id="navID">
+            <a href="/">Home</a>
+            <a>About</a>
+    </nav>
+    </header>
+       
+        <h1>ASCII Art Generator</h1>
+        <br><br>
+        <div class="about">
+            <h2>Description</h2>
+            <p>
+                <code>ascii-art-web</code> is a web GUI version of our ascii-art program. 
+                Our webpage now allows the use of three different banners: shadow, standard, and thinkertoy.
+            </p>
+        
+            <h2>Authors</h2>
+            <ul>
+                <li>Inka Säävuori 👑</li>
+                <li><a href="https://github.com/jeeeeedi">Jedi Reston</a></li>
+                <li><a href="https://github.com/Richard-AungKhantMin">Aung Khant Min (Richard)</a></li>
+            </ul>
+        
+            <h2>Usage</h2>
+            <p>To run our <code>ascii-art-web</code> program, write this in your terminal:</p>
+            <pre><code>go run main.go</code></pre>
+            <p>Then on your browser, go to <code>http://localhost:8080/</code> or <code>http://localhost:8080/ascii-art</code>. 
+            This is where you can input your text and select your banner style.</p>
+        
+            <h2>Implementation</h2>
+            <p>In the <code>main</code> function, <code>http.HandleFunc</code> handles both GET and POST requests only via 
+            the <code>/</code> and <code>/ascii-art</code> URLs. Finally, the server is started on 
+            <code>http://localhost:8080</code>.</p>
+        
+            <p>The <code>indexHandlerFunc</code> function loads the HTML template (<code>index.html</code>) using 
+            <code>tmpl.ParseFiles()</code>. Then it handles both GET and POST requests only. The GET request only loads and 
+            renders the input form using the HTML template. The POST request reads the user's input text 
+            (<code>textInputName</code>) and the selected style (<code>bannerName</code>). Then it calls 
+            <code>AsciiArt()</code> to convert the input text to ASCII art.</p>
+        
+            <h4>Error handling</h4>
+            <ul>
+                <li>400: Text input is empty.</li>
+                <li>404: URL not found.</li>
+                <li>405: Method not allowed.</li>
+                <li>500: Internal server errors during ASCII art processing.</li>
+            </ul>
+</div>
+</body>
+
+<footer>
+    <p>ascii-art by InkaJediRichard 2024<br>
+        Background pixel art by <a href="https://gemini.google.com/">Gemini AI</a></p>
+</footer>
+</html>

@@ -11,30 +11,24 @@
 </head>
 <body>
 <header id="headerID">
-   <!--  <pre class="headerPre" id="headerPreID">
-                      _   _                           _    
-                     (_) (_)                         | |   
-  __ _   ___    ___   _   _   ______    __ _   _ __  | |_  
- / _` | / __|  / __| | | | | |______|  / _` | | '__| | __| 
-| (_| | \__ \ | (__  | | | |          | (_| | | |    \ |_  
- \__,_| |___/  \___| |_| |_|           \__,_| |_|     \__| 
-    </pre> -->
     <nav id="navID">
             <a>Home</a>
             <a href="/about">About</a>
     </nav>
     <div>
     </header>
-       
+    
         <h1>ASCII Art Generator</h1>
+        <div class="instructions">
         <p><a href="https://en.wikipedia.org/wiki/ASCII_art">ASCII art</a> is a text-based graphic design technique using only the 95 printable characters defined by the <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters">ASCII Standard (character codes 32–126)</a>.<br>
         To create your ASCII art, provide text</a>, choose a banner style, and then click <b>Generate ASCII Art</b>.</p><br><br>
+    </div>
 
         <form action="/ascii-art" method="POST">
         
         <label for="textInput">Write your text here:</label><br><br>
         
-        <textarea id="textInputID" name="textInputName" rows="4" cols="50" required>{{.TextInput}}</textarea>
+        <textarea id="textInputID" name="textInputName" rows="4" cols="50" required>{{.TextInput}}</textarea><br><br>
         <button onclick="document.getElementById('textInputID').value = ''">Clear input field</button>
         <br><br><br>
 
@@ -60,10 +54,9 @@
 
 </div>
 
-</body>
-
 <footer>
-    <p>ascii-art by InkaJediRichard 2024<br>
+    <p>ascii-art by InkaJediRichardi 2024<br>
         Background pixel art by <a href="https://gemini.google.com/">Gemini AI</a></p>
 </footer>
+</body>
 </html>
